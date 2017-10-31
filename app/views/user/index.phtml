@@ -1,0 +1,24 @@
+<h1>User List</h1>
+
+<table border="2px">
+  <tr>
+    <th>No</th>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+
+  <?php
+  $serial = 0;
+  foreach ($users as $user) {
+    $serial++;
+    ?>
+    <tr>
+      <td><?=$serial;?></td>
+      <td><a href="/user/show/<?=$user->id;?>"><?=$user->username;?></a></td>
+      <td><?=$user->email;?></td>
+      <td><a href="/user/review/<?=$user->id;?>">Edit</a> || <a href="/user/delete/<?=$user->id;?>">Delete</a></td>
+    </tr>
+  <?php } ?>
+</table>
+<h2><a href="/user/new">Create User</a></h2>

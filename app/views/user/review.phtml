@@ -1,0 +1,18 @@
+<h2>This is edit page</h2>
+<form method="post" action="/user/edit/<?=$user->id;?>">
+  <div class="form-group">
+    <label for="username">User Nmae</lable>
+      <input type="text" id="username" name="username" value="<?=$user->username;?>">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</lable>
+      <input type="text" id="email" name="email" value="<?=$user->email?>">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</lable>
+      <input type="text" id="password" name="password" value="<?=$user->password?>">
+  </div>
+  <div class="form-group">
+      <input type="submit" name="submit" value="Submit">
+  </div>
+</form>
