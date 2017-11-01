@@ -5,6 +5,15 @@ class UserController extends \Phalcon\Mvc\Controller
 
     public function indexAction()
     {
+      if($this->session->has("username")){
+        $this->view->sessionUser = $this->session->get('username');
+      }else{
+        $this->flash->error("you must login");
+        return $this->dispatcher->forward([
+          'controller' => 'login',
+          'action' => 'index'
+        ]);
+      }
         $this->view->users = Users::find();
     }
 
